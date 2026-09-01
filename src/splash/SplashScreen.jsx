@@ -15,7 +15,8 @@ export default function SplashScreen() {
 
       {/* Tipografia e margens sincronizadas com o WelcomeScreen */}
       <h1 className="relative z-10 font-heading text-[2.1rem] font-extrabold text-white tracking-[0.2px] mb-[0.6rem]">
-        Kipper
+        <div>Sistema de Manutenção </div> 
+        <div>Predial</div>
       </h1>
       <p className="relative z-10 font-body text-base text-on-primary max-w-[280px] mb-10">
         Gestão de Manutenção

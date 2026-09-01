@@ -1,13 +1,16 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function LoginScreen({ onLogin, onSwitchToSignup }) {
+export default function LoginScreen({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onLogin?.({ email, password });
-  };
+const handleSubmit = (e) => {
+  e.preventDefault();
+  onLogin?.({ email, password });
+  navigate("/home");
+};
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-paper py-8 px-6">
@@ -15,7 +18,7 @@ export default function LoginScreen({ onLogin, onSwitchToSignup }) {
         <img src="/kipper-logo.svg" alt="Kipper" className="w-13 h-13 mb-7" />
 
         <h1 className="font-heading font-bold text-[1.4rem] leading-[1.3] text-ink-strong mb-[0.4rem]">
-          Gestão de manutenção, simples assim.
+          Sistema de Manutenção Predial
         </h1>
         <p className="font-body text-[0.95rem] text-ink-faint mb-9">
           Faça login na sua conta Kipper
@@ -60,17 +63,6 @@ export default function LoginScreen({ onLogin, onSwitchToSignup }) {
             Entrar
           </button>
         </form>
-
-        <p className="font-body text-[0.85rem] text-ink-mid mt-7">
-          Novo por aqui?{" "}
-          <button
-            type="button"
-            onClick={onSwitchToSignup}
-            className="border-0 bg-transparent text-primary-end font-body text-[0.85rem] font-semibold cursor-pointer p-0 underline"
-          >
-            Cadastre-se
-          </button>
-        </p>
 
         <p className="font-body text-xs text-placeholder mt-8">
           Acesso exclusivo para colaboradores autorizados.

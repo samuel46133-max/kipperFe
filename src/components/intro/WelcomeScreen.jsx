@@ -10,7 +10,9 @@ export default function WelcomeScreen({ onAdvance }) {
       </div>
 
       <h1 className="relative z-10 font-heading text-[2.1rem] font-extrabold text-ink-soft tracking-[0.2px] mb-[0.6rem]">
-        Kipper
+        <div>Sistema de Manutenção </div> 
+        <div>Predial</div>
+        
       </h1>
       <p className="relative z-10 font-body text-base text-ink-muted max-w-[280px] mb-10">
         Gestão e manutenção, sempre à disposição.
